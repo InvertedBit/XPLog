@@ -72,8 +72,10 @@ form input:hover {
 }
 
 .logentry {
-	border: 1px dotted #222;
-	margin-bottom: 10px;
+	border: 1px solid #222;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .logentry .title {
@@ -94,6 +96,15 @@ form input:hover {
 .logentry .tags a {
 	border: 1px solid black;
 	border-radius: 4px;
+	text-decoration: none;
+	padding: 2px;
+}
+
+a.addlogentry {
+	border: 2px solid #0c0;
+	border-radius: 4px;
+	color: #0c0;
+	background-color: #dfd;
 	text-decoration: none;
 	padding: 2px;
 }

@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+error_reporting(E_ALL);
+ini_set('display_errors','On');
+ini_set('display_startup_errors','On');
+
+include_once('config.php');
+
 // Init smarty
 define('SMARTY_DIR',dirname(dirname(dirname(__FILE__))).'/libs/');
 require_once(SMARTY_DIR.'Smarty.class.php');
@@ -11,6 +17,9 @@ $smarty->config_dir = dirname(dirname(__FILE__)).'/config/';
 $smarty->cache_dir = dirname(dirname(__FILE__)).'/cache/';
 
 $smarty->assign('name', 'Alex');
+
+// Init DB
+require_once('helper/Database.php');
 
 $menu = array(
 			array( 'title' => 'Home', 'link' => 'index.php' )

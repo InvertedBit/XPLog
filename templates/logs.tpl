@@ -2,6 +2,8 @@
 
 {include file='header.tpl'}
 
+<a href="index.php?action=addlog" class="addlogentry">Add entry</a>
+
 {if isset($logs)}
 
 	{foreach $logs as $log}

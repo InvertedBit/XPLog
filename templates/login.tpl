@@ -2,7 +2,7 @@
 
 {include file='header.tpl'}
 
-<form action="index.php?action=register" method="post">
+<form action="index.php?action=login" method="post">
 <table>
 <tr>
 <td>Username:</td><td><input type="text" name="username" /></td>

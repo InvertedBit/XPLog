@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2014-08-01 15:02:49
+<?php /* Smarty version Smarty-3.1.18, created on 2014-08-01 18:51:36
          compiled from "/share/MD1_DATA/Web/xplog/templates/logs.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:201716740353db168e17d659-79568400%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb1ff36d473b9b187b47bc18f22df6fa96fb26ba' => 
     array (
       0 => '/share/MD1_DATA/Web/xplog/templates/logs.tpl',
-      1 => 1406876568,
+      1 => 1406890224,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <?php echo $_smarty_tpl->getSubTemplate ('header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
+
+<a href="index.php?action=addlog" class="addlogentry">Add entry</a>
 
 <?php if (isset($_smarty_tpl->tpl_vars['logs']->value)) {?>
 

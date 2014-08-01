@@ -19,11 +19,11 @@ else
 	{
 		$smarty->assign('error', array('title' => 'Registration error', 'text' => 'The two passwords are different.'));
 		$smarty->display('register.tpl');
-	}else
+	}elseif(DbHelper::getInstance()->insert('users', array('name' => $username, 'password' => md5($password), 'email' => $email)))
 	{
-	
-		
-	
 		Header("Location:index.php");
+	}else {
+		$smarty->assign('error', array('title' => 'Registration error', 'text' => 'The user could not be created: '.DbHelper::getInstance()->getError()));
+		$smarty->display('register.tpl');
 	}
 }
