@@ -4,6 +4,7 @@ $config = array(
 	'app' => array(),
 	'db' => array(
 		'conn' => array(
+			'host' => '',
 			'dbname' => '',
 			'user' => '',
 			'password' => ''
