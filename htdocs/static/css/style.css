@@ -70,3 +70,30 @@ form input:hover {
 	border: 2px solid #222;
 	background-color: #eee;
 }
+
+.logentry {
+	border: 1px dotted #222;
+	margin-bottom: 10px;
+}
+
+.logentry .title {
+	border-bottom: 1px dotted #222;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.logentry .content {
+	padding: 5px;
+}
+
+.logentry .tags {
+	padding: 5px;
+	background-color: #ccc;
+}
+
+.logentry .tags a {
+	border: 1px solid black;
+	border-radius: 4px;
+	text-decoration: none;
+	padding: 2px;
+}
