@@ -34,6 +34,20 @@ class DbHelper {
 		return $this->db->query($query);
 	}
 	
+	public function update($table, $where, $data) {
+		$query = 'UPDATE `'.$table.'` SET ';
+		foreach($data as $key => $val) {
+			$query .= '`'.$key.'` = \''.$val.'\',';
+		}
+		$query = substr($query,0,strlen($query)-1);
+		$query .= ' WHERE';
+		foreach($where as $key => $val) {
+			$query .= ' `'.$key.'` = \''.$val.'\' AND';
+		}
+		$query = substr($query,0,strlen($query)-4);
+		$query .= ';';
+	}
+	
 	public function select($table, $keys, $conds = null, $order = null, $limit = null) {
 		$keystring = '';
 		if(is_array($keys)) {

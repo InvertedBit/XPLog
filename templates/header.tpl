@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+	<script language="javascript" type="text/javascript" src="static/js/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 

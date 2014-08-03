@@ -21,14 +21,17 @@ else
 	}else
 	{
 		DbHelper::getInstance()->insert('logs', array('title' => $title, 'content' => $content));
-		$id = DbHelper::getInstance()->select('logs', 'id', array('title' => $title, 'content' => $content), null, '1');
+		$res = DbHelper::getInstance()->select('logs', 'id', array('title' => $title, 'content' => $content), null, '1');
+		$logid = $res->fetch_assoc();
 		foreach($tags as $tag) {
-			//$tags = DbHelper::getInstance()->select();
+			if(!DbHelper::getInstance()->exists('tags', array('name' => $tag)))
+				DbHelper::getInstance()->insert('tags', array('name' => $tag));
+			$res = DbHelper::getInstance()->select('tags', 'id', array('name' => $tag), null, '1');
+			$tagid = $res->fetch_assoc();
+			if(!DbHelper::getInstance()->exists('logs_tags', array('log_id' => $logid, 'tag_id' => $tagid)))
+				DbHelper::getInstance()->insert('tags', array('log_id' => $logid, 'tag_id' => $tagid));
 		}
 		
 		//Header("Location:index.php?action=log&id=".$id['id']);
-	}else {
-		$smarty->assign('error', array('title' => 'Registration error', 'text' => 'The user could not be created: '.DbHelper::getInstance()->getError()));
-		$smarty->display('register.tpl');
 	}
 }

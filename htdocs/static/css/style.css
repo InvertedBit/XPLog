@@ -64,6 +64,7 @@ form input {
 	background-color: #ddd;
 	padding: 5px;
 	border-radius: 5px;
+	width: 400px;
 }
 
 form input:hover {
