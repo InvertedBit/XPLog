@@ -47,7 +47,22 @@ class DbHelper {
 		$query = substr($query,0,strlen($query)-4);
 		$query .= ';';
 	}
-	
+
+    public function exists($table, $conds) {
+        $condstring = '';
+        foreach($conds as $key => $val) {
+            $condstring .= ' `'.$key.'` = \''.$val.'\' AND';
+        }
+        $condstring = substr($condstring, 0, strlen($condstring)-4);
+        $query = 'SELECT EXISTS(SELECT 1 FROM `'.$table.'` WHERE'.$condstring.');';
+        $res = $this->db->query($query);
+        $exists = $res->fetch_array();
+        if($exists[0] == '1')
+            return true;
+        else
+            return false;
+    }
+
 	public function select($table, $keys, $conds = null, $order = null, $limit = null) {
 		$keystring = '';
 		if(is_array($keys)) {
@@ -60,6 +75,7 @@ class DbHelper {
 		}
 		
 		$query = 'SELECT '.$keystring.' FROM `'.$table.'`';
+        //TODO: implement subselect
 		if(isset($conds)) {
 			$condstring = '';
 			foreach($conds as $key => $val) {

@@ -1,14 +1,14 @@
 <?php
 
-class User {
+class Comment {
 
 	public $id;
 	
-	public $name;
+	public $log_id;
 	
-	public $password;
+	public $content;
 	
-	public $email;
+	public $created;
 	
 	public $error = false;
 
@@ -47,7 +47,7 @@ class User {
 	
 	public function save() {
 		if(User::exists($this->name)) {
-			DbHelper::getInstance()->update('users', array('id' => $this->id, array('name' => $this->name, 'password' => md5($this->password), 'email' => $this->email));
+			DbHelper::getInstance()->update('users', array('id' => $this->id, array('name' => $this->name, 'password' => md5($this->password), 'email' => $this->email)));
 		}else {
 			DbHelper::getInstance()->insert('users', array('name' => $this->name, 'password' => md5($this->password), 'email' => $this->email));
 		}

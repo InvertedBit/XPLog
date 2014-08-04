@@ -59,6 +59,18 @@ body {
 	color: #a00;
 }
 
+.infobox {
+    padding: 10px;
+    border: 2px solid #0a0;
+    background-color: #cfc;
+    margin-bottom: 15px;
+}
+
+.infobox p {
+    font-weight: bold;
+    color: #0a0;
+}
+
 form input {
 	border: 2px solid #ddd;
 	background-color: #ddd;
